@@ -178,3 +178,96 @@ def plot(eid,pan_no):
             explode.append(0)
     return candidateName,candidateID,noVote,explode
     
+
+    
+    
+   """
+   important note:dont insert values in any table except "Voters" table you have to insert values in that for run apllication
+   
+   mysql> use VotingDB;
+   
+   mysql> show tables;
++--------------------+
+| Tables_in_VotingDB |
++--------------------+
+| ActivatedVoters    |
+| Voters             |
+| adminLogin         |
+| candidate          |
+| election           |
++--------------------+
+5 rows in set (0.00 sec)
+
+
+
+mysql> desc ActivatedVoters;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| ID            | varchar(10) | NO   | PRI | NULL    |       |
+| VoterName     | varchar(20) | YES  |     | NULL    |       |
+| state         | varchar(15) | YES  |     | NULL    |       |
+| city          | varchar(15) | YES  |     | NULL    |       |
+| village       | varchar(15) | YES  |     | NULL    |       |
+| panno         | smallint(4) | YES  |     | NULL    |       |
+| emailid       | varchar(50) | YES  |     | NULL    |       |
+| tahsil        | varchar(15) | YES  |     | NULL    |       |
+| password      | varchar(6)  | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+17 rows in set (0.00 sec)
+
+mysql> desc Voters
+    -> ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | varchar(10) | NO   | PRI | NULL    |       |
+| VoterName | varchar(50) | YES  |     | NULL    |       |
+| state     | varchar(20) | YES  |     | NULL    |       |
+| city      | varchar(20) | YES  |     | NULL    |       |
+| village   | varchar(20) | YES  |     | NULL    |       |
+| panoNo    | smallint(3) | YES  |     | NULL    |       |
+| emailid   | varchar(30) | YES  |     | NULL    |       |
+| tahsil    | varchar(15) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> desc adminLogin;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| adminname     | varchar(10) | YES  |     | NULL    |       |
+| adminpassword | varchar(6)  | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc candidate;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| candidate_id   | smallint(4) | YES  |     | NULL    |       |
+| candidate_name | varchar(30) | YES  |     | NULL    |       |
+| election_id    | smallint(4) | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc election;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| election_id   | smallint(4) | NO   | PRI | NULL    |       |
+| election_name | varchar(50) | YES  |     | NULL    |       |
+| start_date    | datetime    | YES  |     | NULL    |       |
+| end_date      | datetime    | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+   
+   
+   
+   
+   """
